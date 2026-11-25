@@ -1,0 +1,33 @@
+{
+ "id": "./",
+ "name": "Max Service",
+ "short_name": "Max Service",
+ "description": "Boutique en ligne, cartes virtuelles et démarches administratives au Burkina Faso. Ouvert 24h/24.",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#0F172A",
+ "theme_color": "#0F172A",
+ "lang": "fr",
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
