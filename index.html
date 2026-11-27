@@ -135,6 +135,16 @@ input[type=checkbox].bad{outline:2px solid #dc2626}
 .bnav a,.bnav button{flex:1;text-align:center;text-decoration:none;color:var(--m);font:inherit;font-size:.7rem;background:none;border:0;padding:9px 0 8px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer}.bnav i{font-size:1.15rem}.bnav .on{color:var(--g);font-weight:700}
 @media(min-width:860px){.bnav{display:none}}
 #wa{bottom:78px}@media(min-width:860px){#wa{bottom:16px}}#toast{bottom:140px}footer{padding-bottom:120px}
+#botb{position:fixed;left:12px;bottom:78px;z-index:58;background:var(--n);color:#fff;border:0;border-radius:99px;padding:12px 16px;font:600 .85rem Sora,sans-serif;display:flex;gap:8px;align-items:center;box-shadow:0 6px 18px rgba(0,0,0,.3);cursor:pointer}
+@media(min-width:860px){#botb{bottom:16px;left:16px}}
+#botp{position:fixed;z-index:62;left:8px;right:8px;bottom:74px;max-height:min(75vh,540px);background:#fff;color:var(--t);border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.35);display:flex;flex-direction:column;overflow:hidden}
+@media(min-width:860px){#botp{left:16px;right:auto;width:370px;bottom:76px}}
+.bh{display:flex;justify-content:space-between;align-items:center;background:var(--n);color:#fff;padding:12px 16px}.bh button{background:none;border:0;color:#fff;font-size:1.4rem;cursor:pointer}
+#botm{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:180px}
+.b{max-width:85%;padding:9px 12px;border-radius:14px;font-size:.88rem;white-space:pre-wrap;overflow-wrap:anywhere}.b.u{align-self:flex-end;background:var(--g);color:#052e22}.b.a{align-self:flex-start;background:#EEF2F7}.b a{color:#047857;font-weight:700}
+#botq{display:flex;gap:6px;flex-wrap:wrap;padding:0 12px 8px}#botq button{border:1px solid var(--l);background:#fff;border-radius:99px;padding:6px 11px;font:inherit;font-size:.78rem;cursor:pointer;color:var(--t)}
+#botf{display:flex;gap:8px;padding:8px 12px;border-top:1px solid var(--l)}#botf input{flex:1;padding:10px;font-size:16px}#botf button{background:var(--g);color:#052e22;border:0;border-radius:9px;padding:0 14px;cursor:pointer}
+.bn{font-size:.7rem;color:var(--m);padding:0 12px 10px}
 </style>
 </head>
 <body>
@@ -270,6 +280,10 @@ input[type=checkbox].bad{outline:2px solid #dc2626}
 </div></footer>
 
 <nav class="bnav" aria-label="Navigation"><a href="#home" data-n="home"><i class="fa-solid fa-house"></i><span>Accueil</span></a><a href="#services" data-n="services"><i class="fa-solid fa-list-check"></i><span>Services</span></a><a href="#boutique" data-n="boutique"><i class="fa-solid fa-store"></i><span>Boutique</span></a><button type="button" data-bn="acc"><i class="fa-solid fa-user"></i><span>Compte</span></button></nav>
+<button id="botb" type="button" aria-label="Assistant"><i class="fa-solid fa-robot"></i> Assistant</button>
+<div id="botp" hidden role="dialog" aria-label="Assistant Max Service"><div class="bh"><strong>Assistant Max Service</strong><button id="botx" type="button" aria-label="Fermer">&times;</button></div><div id="botm"></div><div id="botq"></div>
+<form id="botf" novalidate><input id="boti" maxlength="300" placeholder="Posez votre question…" autocomplete="off" aria-label="Votre question"><button type="submit" aria-label="Envoyer"><i class="fa-solid fa-paper-plane"></i></button></form>
+<p class="bn">Assistant IA : il peut se tromper. Pour un dossier précis, écrivez-nous sur WhatsApp.</p></div>
 <a id="wa" href="https://wa.me/bado56837328" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 <div id="toast" role="status" aria-live="polite"></div>
 
@@ -553,6 +567,26 @@ if(h==="contact"){document.getElementById("contact").scrollIntoView();return}if(
 $$(".view").forEach(v=>v.classList.toggle("on",v.id===h));$$(".bnav [data-n]").forEach(a=>a.classList.toggle("on",a.dataset.n===h));$("#mn").classList.remove("on");
 if(sc)document.getElementById(sc).scrollIntoView();else scrollTo(0,0)}
 addEventListener("hashchange",route);document.querySelector('[data-bn="acc"]').onclick=()=>$("#acc").click();route();
+
+const AI_URL="https://maxassistant.badobalimaxime.workers.dev";
+const BQ=["Tarifs des services","Comment payer ?","Ouvrir une boutique","Délais de traitement"];
+const FAQ=[[/tarif|prix|combien|co[uû]t|cher/i,"Chaque service de Max Service coûte 1 000 FCFA. Paiement par Orange Money (56 83 73 28), Moov Money (73 08 90 55) ou Wave (56 83 73 28), puis envoi de la capture sur WhatsApp."],
+[/pay|orange|moov|wave|mobile money/i,"Vous pouvez payer par Orange Money (56 83 73 28), Moov Money (73 08 90 55) ou Wave (56 83 73 28). Après le paiement, envoyez la capture d'écran sur WhatsApp au +226 56 83 73 28."],
+[/boutique|vendre|vendeur|produit/i,"Créez votre compte, ouvrez votre boutique depuis l'onglet Boutique, puis ajoutez vos produits avec photo et prix. Vous pouvez aussi créer des codes de réduction."],
+[/d[ée]lai|combien de temps|dur[ée]e|temps/i,"Les délais dépendent du service et des administrations. Nous vous donnons une estimation dès la prise en charge de votre dossier."],
+[/emploi|recrut|travail|job/i,"Dans l'onglet Emploi, connectez-vous puis publiez un avis de recherche d'emploi ou de recrutement. Il est visible par tous pendant 30 jours."],
+[/contact|joindre|whatsapp|t[ée]l[ée]phone|num[ée]ro/i,"Écrivez-nous sur WhatsApp au +226 56 83 73 28 ou appelez le +226 73 08 90 55. Nous sommes ouverts 24h/24, 7j/7."]];
+let BH=[],BB=false;
+function bsay(t,c){const d=document.createElement("div");d.className="b "+c;d.textContent=t;$("#botm").append(d);$("#botm").scrollTop=1e9;return d}
+async function bask(q){if(BB||!q.trim())return;BB=true;bsay(q,"u");BH.push({role:"user",content:q});const w=bsay("…","a");let r=null;
+if(AI_URL){try{const x=await fetch(AI_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:BH.slice(-6)})});if(x.ok){const d=await x.json();r=d.reply}}catch(e){}}
+if(!r){const f=FAQ.find(x=>x[0].test(q));r=f?f[1]:null}
+if(r)w.textContent=r;else{w.textContent="Je n'ai pas la réponse pour le moment. Écrivez-nous sur WhatsApp, nous répondons à toute heure : ";const a=document.createElement("a");a.href="https://wa.me/22656837328?text="+encodeURIComponent("Bonjour, j'ai une question : "+q);a.target="_blank";a.rel="noopener";a.textContent="ouvrir WhatsApp";w.append(a)}
+BH.push({role:"assistant",content:r||"Voir WhatsApp"});$("#botm").scrollTop=1e9;setTimeout(()=>{BB=false},800)}
+function bopen(){$("#botp").hidden=false;$("#botb").hidden=true;if(!$("#botm").children.length){bsay("Bonjour ! Je suis l'assistant Max Service. Posez-moi vos questions sur nos services, les paiements, la boutique ou l'emploi.","a");$("#botq").innerHTML=BQ.map(x=>`<button type="button">${x}</button>`).join("")}$("#boti").focus()}
+$("#botb").onclick=bopen;$("#botx").onclick=()=>{$("#botp").hidden=true;$("#botb").hidden=false};
+$("#botq").onclick=e=>{const b=e.target.closest("button");if(b){$("#botq").innerHTML="";bask(b.textContent)}};
+$("#botf").onsubmit=e=>{e.preventDefault();const q=$("#boti").value;$("#boti").value="";$("#botq").innerHTML="";bask(q)};
 </script>
 </body>
 </html>
