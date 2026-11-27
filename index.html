@@ -360,7 +360,7 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>"&#"+c.charCodeAt(0)+";"),fm=n=>Num
 let MP=[];
 function draw(){$("#pg").innerHTML=MP.map(x=>`<article class="card">${x.img?`<img class="pi" src="${esc(x.img)}" alt="${esc(x.name)}" loading="lazy">`:`<i class="ic fa-solid fa-box-open"></i>`}<h3>${esc(x.name)}</h3><p class="meta">${esc(x.storeName)}</p><p>${esc(x.description||"")}</p><div class="pr">${fm(x.price)}</div><button class="btn bg" data-buy="${esc(x.id)}">Commander</button></article>`).join("")+`<article class="card"><i class="ic fa-solid fa-magnifying-glass"></i><h3>Un autre produit ?</h3><p>Dites-nous ce que vous cherchez, nous le trouvons.</p><button class="btn bo" data-svc="Vente en ligne">Demander un produit</button></article>`}
 draw();
-const toast=m=>{const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.i);toast.i=setTimeout(()=>t.classList.remove("on"),2500)};
+const toast=m=>{const t=$("#toast"),d=document.querySelector("dialog[open]");(d||document.body).append(t);t.textContent=m;t.classList.add("on");clearTimeout(toast.i);toast.i=setTimeout(()=>t.classList.remove("on"),2500)};
 $("#yr").textContent=new Date().getFullYear();
 $("#bur").onclick=()=>$("#mn").classList.toggle("on");
 $$("#mn a").forEach(a=>a.onclick=()=>$("#mn").classList.remove("on"));
@@ -454,7 +454,7 @@ function done(){$("#au").close();hi();toast(welcome())}
 $("#fi").onsubmit=async e=>{e.preventDefault();if(!check("fi")){toast(MSG);return}
 try{setME(await aut("signInWithPassword",{email:$("#i1").value.trim(),password:$("#i2").value,returnSecureToken:true}));ME.profile=await getDoc("users/"+ME.uid);done()}catch(x){toast(x.message)}};
 $("#fu").onsubmit=async e=>{e.preventDefault();if(!check("fu")){toast(MSG);return}const v=i=>$("#u"+i).value.trim();
-try{setME(await aut("signUp",{email:v(8),password:$("#u9").value,returnSecureToken:true}));const pr={prenom:v(1),nom:v(2),naissance:v(3),pays:v(4),ville:v(5),wa:tel(v(6)),tel:tel(v(7)),email:v(8),createdAt:Date.now()};await setDoc("users/"+ME.uid,pr);ME.profile=pr;done()}catch(x){toast(x.message)}};
+try{setME(await aut("signUp",{email:v(8),password:$("#u9").value,returnSecureToken:true}));const pr={prenom:v(1),nom:v(2),naissance:v(3),pays:v(4),ville:v(5),wa:tel(v(6)),tel:tel(v(7)),email:v(8),createdAt:Date.now()};await setDoc("users/"+ME.uid,pr);ME.profile=pr;done()}catch(x){toast(/permission|PERMISSION/.test(x.message)?"Compte créé, mais le profil n'a pas pu être enregistré : les règles Firestore doivent être mises à jour.":x.message)}};
 $("#fpw").onclick=async()=>{const m=$("#i1").value.trim();if(!m){toast("Entrez d'abord votre e-mail");$("#i1").focus();return}try{await aut("sendOobCode",{requestType:"PASSWORD_RESET",email:m});toast("Lien de réinitialisation envoyé par e-mail")}catch(x){toast(x.message)}};
 $("#gst").onclick=()=>$("#au").close();
 $("#au").addEventListener("close",()=>{try{sessionStorage.setItem("ms_guest","1")}catch(e){}});
