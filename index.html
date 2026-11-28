@@ -167,7 +167,7 @@ input[type=checkbox].bad{outline:2px solid #dc2626}
 <section class="view on" id="home"><div class="c">
 <div class="hello"><span class="badge"><i></i>Ouvert 24h/24 - 7j/7</span><h1>Vos démarches et achats, sans file d'attente</h1><p>Confiant, rapide, sécurisé — Votre boutique en ligne, vos cartes virtuelles et vos démarches administratives en un clic.</p></div>
 <div class="tiles">
-<a class="tile" href="#services"><i class="fa-solid fa-list-check"></i><b>Services</b><span>Démarches à 1 000 F</span></a>
+<a class="tile" href="#services"><i class="fa-solid fa-list-check"></i><b>Services</b><span>Démarches et cartes</span></a>
 <a class="tile" href="#boutique"><i class="fa-solid fa-store"></i><b>Boutique</b><span>Acheter ou vendre</span></a>
 <a class="tile" href="#emploi"><i class="fa-solid fa-briefcase"></i><b>Emploi</b><span>Offres et demandes</span></a>
 <a class="tile" href="#paiement"><i class="fa-solid fa-wallet"></i><b>Paiement</b><span>Orange, Moov, Wave</span></a>
@@ -298,7 +298,7 @@ input[type=checkbox].bad{outline:2px solid #dc2626}
 <div id="cx" hidden><label for="f15">Carte virtuelle souhaitée</label><select id="f15"><option value="">Choisir la carte</option><option>Eversend</option><option>Lwili</option><option>Fusion Money</option><option>Ecobank</option><option>Autre carte (à préciser dans les infos)</option></select><span class="err">Choisissez une carte</span></div>
 <div id="vx" hidden><div class="row"><div><label for="f8">Produit à vendre</label><input id="f8"><span class="err">Champ requis</span></div><div><label for="f9">Prix souhaité (FCFA)</label><input id="f9" type="number" inputmode="numeric" min="1"><span class="err">Prix requis</span></div></div><p class="hint">Après l'envoi, ajoutez les photos du produit dans la conversation WhatsApp.</p></div>
 <div class="row"><div><label for="f1">Nom</label><input id="f1" required autocomplete="family-name"><span class="err">Champ requis</span></div><div><label for="f2">Prénom</label><input id="f2" required autocomplete="given-name"><span class="err">Champ requis</span></div></div>
-<div class="row"><div><label for="f3">Date de naissance</label><input id="f3" type="date" required><span class="err">Date requise</span></div><div><label for="f4">Pays</label><input id="f4" required value="Burkina Faso"><span class="err">Champ requis</span></div></div>
+<div class="row"><div><label for="f3">Date de naissance</label><input id="f3" type="date" required><span class="err">Date requise</span></div><div><label for="f4">Pays (indicatif)</label><select id="f4" required></select><span class="err">Champ requis</span></div></div>
 <div class="row"><div><label for="f10">Région</label><select id="f10" required></select><span class="err">Choisissez une option</span><input id="o10" hidden placeholder="Écrivez ici"></div><div><label for="f11">Province</label><select id="f11" required></select><span class="err">Choisissez une option</span><input id="o11" hidden placeholder="Écrivez ici"></div></div>
 <div class="row"><div><label for="f12">Département</label><select id="f12" required></select><span class="err">Choisissez une option</span><input id="o12" hidden placeholder="Écrivez ici"></div><div><label for="f13">Commune</label><select id="f13" required></select><span class="err">Choisissez une option</span><input id="o13" hidden placeholder="Écrivez ici"></div></div>
 <div class="row"><div><label for="f16">Ville / Village</label><input id="f16" required><span class="err">Champ requis</span></div><div><label for="f14">Secteur</label><input id="f14" required><span class="err">Champ requis</span></div></div>
@@ -329,9 +329,9 @@ input[type=checkbox].bad{outline:2px solid #dc2626}
 <label for="i2">Mot de passe</label><input id="i2" type="password" required autocomplete="current-password"><span class="err">Minimum 6 caractères</span>
 <button class="btn bg" type="submit" style="width:100%;margin-top:18px">Se connecter</button><p class="hint"><button type="button" class="lnk" id="fpw">Mot de passe oublié ?</button></p></form>
 <form id="fu" novalidate hidden><div class="row"><div><label for="u1">Prénom</label><input id="u1" required autocomplete="given-name"><span class="err">Champ requis</span></div><div><label for="u2">Nom</label><input id="u2" required autocomplete="family-name"><span class="err">Champ requis</span></div></div>
-<div class="row"><div><label for="u3">Date de naissance</label><input id="u3" type="date" required><span class="err">Date requise</span></div><div><label for="u4">Pays</label><input id="u4" required value="Burkina Faso"><span class="err">Champ requis</span></div></div>
+<div class="row"><div><label for="u3">Date de naissance</label><input id="u3" type="date" required><span class="err">Date requise</span></div><div><label for="u4">Pays (indicatif)</label><select id="u4" required></select><span class="err">Champ requis</span></div></div>
 <label for="u5">Ville</label><input id="u5" required><span class="err">Champ requis</span>
-<label for="u6">Numéro WhatsApp</label><input id="u6" type="tel" inputmode="tel" required><span class="err">Numéro invalide (8 chiffres minimum)</span>
+<label for="u6">Numéro WhatsApp (<span id="u6d">+226</span>)</label><input id="u6" type="tel" inputmode="tel" required><span class="err">Numéro invalide (8 chiffres minimum)</span>
 <label for="u8">Adresse e-mail</label><input id="u8" type="email" data-any required autocomplete="email"><span class="err">Entrez une adresse e-mail valide</span>
 <label for="u9">Mot de passe</label><input id="u9" type="password" required autocomplete="new-password"><span class="err">Minimum 6 caractères</span>
 <button class="btn bg" type="submit" style="width:100%;margin-top:18px">Créer mon compte</button></form>
@@ -358,7 +358,8 @@ const SV=[
 ["fa-stamp","Achat de timbres numériques","","Achat de timbres fiscaux numériques pour vos dossiers."],
 ["fa-users","Certificat de revenu des parents","","Démarche pour le certificat de revenu des parents."],
 ["fa-compass","Conseils et suivi personnalisé","","Un accompagnement sur mesure pour vos projets et démarches."]];
-$("#sg").innerHTML=SV.map(s=>`<article class="card" data-k="${(s[1]+" "+s[2]+" "+s[3]).toLowerCase()}"><i class="ic fa-solid ${s[0]}"></i><h3>${s[1]}</h3><p>${s[2]?s[2]+". ":""}${s[3]}</p><div class="pr">1 000 FCFA</div><button class="btn bo" data-svc="${s[1]}">Commander / Demander ce service</button></article>`).join("");
+const NP=["Vente en ligne","Aide à la vente en ligne","Achat de timbres numériques","Conseils et suivi personnalisé"];
+$("#sg").innerHTML=SV.map(s=>`<article class="card" data-k="${(s[1]+" "+s[2]+" "+s[3]).toLowerCase()}"><i class="ic fa-solid ${s[0]}"></i><h3>${s[1]}</h3><p>${s[2]?s[2]+". ":""}${s[3]}</p>${NP.includes(s[1])?"":'<div class="pr">1 000 FCFA</div>'}<button class="btn bo" data-svc="${s[1]}">Commander / Demander ce service</button></article>`).join("");
 const PRODUITS=[{n:"Fauteuil",p:54000,d:"Fauteuil confortable.",i:""}];
 let LOC=[];try{LOC=JSON.parse(localStorage.getItem("ms_p")||"[]")}catch(e){}
 const esc=s=>String(s).replace(/[&<>"']/g,c=>"&#"+c.charCodeAt(0)+";"),fm=n=>Number(n).toLocaleString("fr-FR")+" FCFA";
@@ -376,8 +377,8 @@ const nz=s=>String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,
 $("#q").oninput=e=>{const w=nz(e.target.value).split(/[^a-z0-9]+/).filter(x=>x.length>1).map(x=>x.length>3?x.replace(/[sx]$/,""):x);let n=0;$$("#sg .card").forEach(c=>{const k=nz(c.dataset.k+" "+c.textContent),h=!w.every(x=>k.includes(x));c.hidden=h;if(!h)n++});$("#none").style.display=n?"none":"block"};
 const sm=$("#sm");
 document.addEventListener("click",e=>{
-const b=e.target.closest("[data-svc]");if(b){$("#f0").value=b.dataset.svc;$("#st").textContent=b.dataset.svc;$("#spx").hidden=!SV.some(s=>s[1]===b.dataset.svc);
-const q0=ME&&ME.profile;if(q0){[[1,q0.nom],[2,q0.prenom],[3,q0.naissance],[4,q0.pays],[5,q0.wa],[16,q0.ville]].forEach(a=>{const el=$("#f"+a[0]);if(el&&!el.value&&a[1])el.value=a[1]});if(/@gmail\.com$/i.test(q0.email||"")&&!$("#f6").value)$("#f6").value=q0.email}const cs=b.dataset.svc==="Création de cartes virtuelles";$("#cx").hidden=!cs;$("#f15").required=cs;const vs=["Devenir vendeur partenaire","Aide à la vente en ligne"].includes(b.dataset.svc);$("#vx").hidden=!vs;$("#f8").required=vs;$("#f9").required=vs;$$("#sf .bad").forEach(x=>x.classList.remove("bad"));sm.showModal();return}
+const b=e.target.closest("[data-svc]");if(b){$("#f0").value=b.dataset.svc;$("#st").textContent=b.dataset.svc;$("#spx").hidden=!SV.some(s=>s[1]===b.dataset.svc)||NP.includes(b.dataset.svc);
+const q0=ME&&ME.profile;if(q0){[[1,q0.nom],[2,q0.prenom],[3,q0.naissance],[4,q0.pays],[5,q0.wa],[16,q0.ville]].forEach(a=>{const el=$("#f"+a[0]);if(el&&!el.value&&a[1])el.value=a[1]});if(/@gmail\.com$/i.test(q0.email||"")&&!$("#f6").value)$("#f6").value=q0.email}if($("#f4").onchange)$("#f4").onchange();const cs=b.dataset.svc==="Création de cartes virtuelles";$("#cx").hidden=!cs;$("#f15").required=cs;const vs=["Devenir vendeur partenaire","Aide à la vente en ligne"].includes(b.dataset.svc);$("#vx").hidden=!vs;$("#f8").required=vs;$("#f9").required=vs;$$("#sf .bad").forEach(x=>x.classList.remove("bad"));sm.showModal();return}
 const c=e.target.closest("[data-copy]");if(c){const v=c.dataset.copy,ok=()=>toast(LANG==="en"?"Number copied: "+v+" ("+c.dataset.n+")":"Numéro "+c.dataset.n+" copié : "+v);
 (navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).then(ok).catch(()=>{const t=document.createElement("textarea");t.value=v;document.body.append(t);t.select();document.execCommand("copy");t.remove();ok()});return}
 if(e.target.closest("[data-close]")||e.target===sm||e.target===$("#lm")||e.target===$("#am")||e.target===$("#jm")||e.target===$("#sp")||e.target===$("#co")){e.target.closest("dialog")?.close()}
@@ -461,7 +462,7 @@ function done(){$("#au").close();hi();toast(welcome())}
 $("#fi").onsubmit=async e=>{e.preventDefault();if(!check("fi")){toast(MSG);return}
 try{setME(await aut("signInWithPassword",{email:$("#i1").value.trim(),password:$("#i2").value,returnSecureToken:true}));ME.profile=await getDoc("users/"+ME.uid);done()}catch(x){toast(x.message)}};
 $("#fu").onsubmit=async e=>{e.preventDefault();if(!check("fu")){toast(MSG);return}const v=i=>$("#u"+i).value.trim();
-try{setME(await aut("signUp",{email:v(8),password:$("#u9").value,returnSecureToken:true}));const pr={prenom:v(1),nom:v(2),naissance:v(3),pays:v(4),ville:v(5),wa:tel(v(6)),email:v(8),createdAt:Date.now()};await setDoc("users/"+ME.uid,pr);ME.profile=pr;done()}catch(x){toast(/permission|PERMISSION/.test(x.message)?"Compte créé, mais le profil n'a pas pu être enregistré : les règles Firestore doivent être mises à jour.":x.message)}};
+try{setME(await aut("signUp",{email:v(8),password:$("#u9").value,returnSecureToken:true}));const pr={prenom:v(1),nom:v(2),naissance:v(3),pays:v(4),ville:v(5),wa:waFull(v(6),v(4)),email:v(8),createdAt:Date.now()};await setDoc("users/"+ME.uid,pr);ME.profile=pr;done()}catch(x){toast(/permission|PERMISSION/.test(x.message)?"Compte créé, mais le profil n'a pas pu être enregistré : les règles Firestore doivent être mises à jour.":x.message)}};
 $("#fpw").onclick=async()=>{const m=$("#i1").value.trim();if(!m){toast("Entrez d'abord votre e-mail");$("#i1").focus();return}try{await aut("sendOobCode",{requestType:"PASSWORD_RESET",email:m});toast("Lien de réinitialisation envoyé par e-mail")}catch(x){toast(x.message)}};
 $("#gst").onclick=()=>$("#au").close();
 $("#au").addEventListener("close",()=>{try{sessionStorage.setItem("ms_guest","1")}catch(e){}});
@@ -524,14 +525,14 @@ const cl=t.closest("[data-copyl]");if(cl){(navigator.clipboard?navigator.clipboa
 const dp=t.closest("[data-delp]"),dc=t.closest("[data-delc]"),os=t.closest("[data-ost]");
 try{if(dp){await delDoc("products/"+dp.dataset.delp);await mload();await spr()}
 if(dc){await delDoc("codes/"+dc.dataset.delc);await spr()}
-if(os){const a=os.dataset.ost.split("|");await fr("/orders/"+a[0]+"?updateMask.fieldPaths=status",{method:"PATCH",body:JSON.stringify(enc({status:a[1]}))});await spr()}}catch(x){toast("Action impossible, réessayez")}});
+if(os){const a=os.dataset.ost.split("|");await fr("/orders/"+a[0]+"?updateMask.fieldPaths=status",{method:"PATCH",body:JSON.stringify(enc({status:a[1]}))});await spr()}}catch(x){toast(errm(x))}});
 $("#spc").addEventListener("submit",async e=>{e.preventDefault();const f=e.target.id,v=i=>$("#"+i).value.trim();
 if(f!=="asf"&&f!=="cdf"&&!check(f)){toast(MSG);return}
 try{if(f==="stf"){await setDoc("stores/"+ME.uid,{name:v("st1"),description:v("st2"),wa:tel(v("st3")),createdAt:Date.now()});toast("Boutique créée ! Ajoutez maintenant vos produits.")}
 if(f==="asf"){await setDoc("assistants/"+ME.uid,{name:v("as0")||"Assistant",active:$("#as1").checked?"1":"0",welcome:v("as3"),info:v("as2"),wa:tel(v("as4")),owner:nm(),createdAt:Date.now()});toast("Assistant enregistré")}
 if(f==="prf"){const pr=Math.round(+v("pr2"));if(!(pr>0))return;const o={storeId:ME.uid,storeName:SPST.name,name:v("pr1"),price:pr,description:v("pr3"),wa:tel(v("pr5")),createdAt:Date.now()};PRI.forEach((s,i)=>{o[i?"img"+(i+1):"img"]=s});await addDoc("products",o);PRI=[];toast("Produit publié : visible par tous !");await mload()}
 if(f==="cdf"){const c=v("cd1").toUpperCase().replace(/[^A-Z0-9]/g,""),pc=Math.round(+v("cd2"));if(!c&&!pc){toast("Remplissez le code et le pourcentage");return}if(c.length<3||!(pc>=1&&pc<=90)){toast("Code : 3 à 12 lettres/chiffres, réduction de 1 à 90 %");return}await setDoc("codes/"+ME.uid+"_"+c,{storeId:ME.uid,code:c,percent:pc,createdAt:Date.now()});toast("Code créé !")}
-await spr()}catch(x){toast("Action impossible, réessayez")}});
+await spr()}catch(x){toast(errm(x))}});
 async function boot(){let r=null;try{r=localStorage.getItem("ms_auth")}catch(e){}
 if(r){try{ME={r,exp:0,uid:"",t:"",email:""};await fresh();ME.profile=await getDoc("users/"+ME.uid)}catch(e){ME=null}}
 hi();const qa=new URLSearchParams(location.search).get("a"),ml=mload();if(qa)ml.then(()=>openAssistant(qa));let g=null;try{g=sessionStorage.getItem("ms_guest")}catch(e){}if(!ME&&!g)setTimeout(openAu,500)}
@@ -595,7 +596,7 @@ addEventListener("hashchange",route);document.querySelector('[data-bn="acc"]').o
 
 const AI_URL="https://maxassistant.badobalimaxime.workers.dev";
 const BQ=["Tarifs des services","Comment payer ?","Ouvrir une boutique","Délais de traitement"];
-const FAQ=[[/tarif|prix|combien|co[uû]t|cher/i,"Chaque service de Max Service coûte 1 000 FCFA. Paiement par Orange Money (56 83 73 28), Moov Money (73 08 90 55) ou Wave (56 83 73 28), puis envoi de la capture sur WhatsApp."],
+const FAQ=[[/tarif|prix|combien|co[uû]t|cher/i,"Les démarches administratives et les cartes virtuelles coûtent 1 000 FCFA. Pour la vente en ligne, les timbres numériques et les conseils, le tarif est communiqué sur WhatsApp. Paiement par Orange Money (56 83 73 28), Moov Money (73 08 90 55) ou Wave (56 83 73 28), puis envoi de la capture sur WhatsApp."],
 [/pay|orange|moov|wave|mobile money/i,"Vous pouvez payer par Orange Money (56 83 73 28), Moov Money (73 08 90 55) ou Wave (56 83 73 28). Après le paiement, envoyez la capture d'écran sur WhatsApp au +226 56 83 73 28."],
 [/boutique|vendre|vendeur|produit/i,"Créez votre compte, ouvrez votre boutique depuis l'onglet Boutique, puis ajoutez vos produits avec photo et prix. Vous pouvez aussi créer des codes de réduction."],
 [/d[ée]lai|combien de temps|dur[ée]e|temps/i,"Les délais dépendent du service et des administrations. Nous vous donnons une estimation dès la prise en charge de votre dossier."],
@@ -612,6 +613,15 @@ function bopen(){$("#botp").hidden=false;$("#botb").hidden=true;if(!$("#botm").c
 $("#botb").onclick=()=>{if(BSHOP){BSHOP=null;BH=[];$("#botm").innerHTML="";$("#botq").innerHTML=""}bopen()};$("#botx").onclick=()=>{$("#botp").hidden=true;$("#botb").hidden=false};
 $("#botq").onclick=e=>{const b=e.target.closest("button");if(b){$("#botq").innerHTML="";bask(b.textContent)}};
 $("#botf").onsubmit=e=>{e.preventDefault();const q=$("#boti").value;$("#boti").value="";$("#botq").innerHTML="";bask(q)};
+
+const COUNTRIES="Afghanistan|93;Afrique du Sud|27;Albanie|355;Algérie|213;Allemagne|49;Andorre|376;Angola|244;Antigua-et-Barbuda|1268;Arabie saoudite|966;Argentine|54;Arménie|374;Australie|61;Autriche|43;Azerbaïdjan|994;Bahamas|1242;Bahreïn|973;Bangladesh|880;Barbade|1246;Belgique|32;Belize|501;Bénin|229;Bhoutan|975;Biélorussie|375;Birmanie|95;Bolivie|591;Bosnie-Herzégovine|387;Botswana|267;Brésil|55;Brunei|673;Bulgarie|359;Burkina Faso|226;Burundi|257;Cambodge|855;Cameroun|237;Canada|1;Cap-Vert|238;Chili|56;Chine|86;Chypre|357;Colombie|57;Comores|269;Congo (Brazzaville)|242;Congo (RDC)|243;Corée du Nord|850;Corée du Sud|82;Costa Rica|506;Côte d\'Ivoire|225;Croatie|385;Cuba|53;Danemark|45;Djibouti|253;Dominique|1767;Égypte|20;Émirats arabes unis|971;Équateur|593;Érythrée|291;Espagne|34;Estonie|372;Eswatini|268;États-Unis|1;Éthiopie|251;Fidji|679;Finlande|358;France|33;Gabon|241;Gambie|220;Géorgie|995;Ghana|233;Grèce|30;Grenade|1473;Guatemala|502;Guinée|224;Guinée équatoriale|240;Guinée-Bissau|245;Guyana|592;Haïti|509;Honduras|504;Hongrie|36;Inde|91;Indonésie|62;Irak|964;Iran|98;Irlande|353;Islande|354;Israël|972;Italie|39;Jamaïque|1876;Japon|81;Jordanie|962;Kazakhstan|7;Kenya|254;Kirghizistan|996;Kiribati|686;Koweït|965;Laos|856;Lesotho|266;Lettonie|371;Liban|961;Liberia|231;Libye|218;Liechtenstein|423;Lituanie|370;Luxembourg|352;Macédoine du Nord|389;Madagascar|261;Malaisie|60;Malawi|265;Maldives|960;Mali|223;Malte|356;Maroc|212;Maurice|230;Mauritanie|222;Mexique|52;Moldavie|373;Monaco|377;Mongolie|976;Monténégro|382;Mozambique|258;Namibie|264;Népal|977;Nicaragua|505;Niger|227;Nigeria|234;Norvège|47;Nouvelle-Zélande|64;Oman|968;Ouganda|256;Ouzbékistan|998;Pakistan|92;Palestine|970;Panama|507;Papouasie-Nouvelle-Guinée|675;Paraguay|595;Pays-Bas|31;Pérou|51;Philippines|63;Pologne|48;Portugal|351;Qatar|974;République centrafricaine|236;République dominicaine|1809;République tchèque|420;Roumanie|40;Royaume-Uni|44;Russie|7;Rwanda|250;Saint-Marin|378;Salvador|503;Samoa|685;Sao Tomé-et-Principe|239;Sénégal|221;Serbie|381;Seychelles|248;Sierra Leone|232;Singapour|65;Slovaquie|421;Slovénie|386;Somalie|252;Soudan|249;Soudan du Sud|211;Sri Lanka|94;Suède|46;Suisse|41;Suriname|597;Syrie|963;Tadjikistan|992;Tanzanie|255;Tchad|235;Thaïlande|66;Timor oriental|670;Togo|228;Tonga|676;Trinité-et-Tobago|1868;Tunisie|216;Turkménistan|993;Turquie|90;Ukraine|380;Uruguay|598;Vanuatu|678;Venezuela|58;Vietnam|84;Yémen|967;Zambie|260;Zimbabwe|263".split(";").map(x=>x.split("|"));
+const dialOf=n=>{const c=COUNTRIES.find(x=>x[0]===n);return c?c[1]:"226"};
+const waFull=(num,country)=>{const raw=String(num).trim(),d=dialOf(country);let g=raw.replace(/\D/g,"");if(raw.startsWith("+")||g.startsWith("00"))return g.replace(/^00/,"");g=g.replace(/^0+/,"");return g.startsWith(d)&&g.length>=d.length+7?g:d+g};
+const errm=x=>/permission|PERMISSION|403/.test((x&&x.message)||"")?"Autorisation refusée : les règles Firebase doivent être mises à jour.":"Action impossible, réessayez";
+["u4","f4"].forEach(i=>{$("#"+i).innerHTML=COUNTRIES.map(c=>`<option value="${c[0]}">${c[0]} (+${c[1]})</option>`).join("");$("#"+i).value="Burkina Faso"});
+$("#u4").onchange=()=>{$("#u6d").textContent="+"+dialOf($("#u4").value)};
+$("#f4").onchange=()=>{if($("#f4").value==="Burkina Faso")geo();else{$("#f10").value="__o";oth(10);cas(10)}};
+Object.assign(EN,{"Démarches et cartes":"Procedures and cards","Pays (indicatif)":"Country (dial code)"});
 </script>
 </body>
 </html>
